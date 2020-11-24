@@ -1,4 +1,4 @@
-import { Grid, Paper, Typography } from '@material-ui/core'
+import { Grid, Paper, Typography, Box } from '@material-ui/core'
 import { LeftSide } from './components/LeftSide/LeftSide';
 import { BigBanner } from './components/BigBanner/BigBanner';
 import { Header } from './components/Header/Header';
@@ -16,6 +16,13 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
     // flexDirection: 'column',
     overflowY: 'scroll'
+  },
+  products: {
+    display: 'flex',
+    flexWrap: 'wrap'
+  },
+  title: {
+    margin: theme.spacing(2)
   }
 }));
 export const App = () => {
@@ -23,24 +30,24 @@ export const App = () => {
   return (
     <Paper>
       <Header />
-      <Grid container spacing={2}>
+      <Grid container>
         <Grid item className={classes.root} xs={12}>
           <BigBanner />
         </Grid>
         <Grid item className={classes.left} xs={2}>
           <LeftSide />
         </Grid>
-        <Grid item container xs={10} spacing={2} alignContent='flex-start'>
-          <Grid item xs={12}>
+        <Grid item container xs={10} alignContent='flex-start'>
+          <Grid item xs={12} className={classes.title}>
             <Typography variant='h4'>Популярные товары</Typography>
           </Grid>
-          <Grid container spacing={3} alignContent='flex-start'>
+          <Box className={classes.products} >
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((product, i) => (<PopularProduct key={i} />))}
-          </Grid>
+          </Box>
           <Banners />
-          <Grid container spacing={3} alignContent='flex-start'>
+          <Box className={classes.products} >
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((product, i) => (<PopularProduct key={i} />))}
-          </Grid>
+          </Box>
         </Grid>
 
       </Grid>
