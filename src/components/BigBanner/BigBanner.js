@@ -3,7 +3,9 @@ import { Paper, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '100%'
+        width: '100%',
+        textAlign: 'center',
+        marginTop: theme.spacing(2)
     },
 }));
 
@@ -23,21 +25,23 @@ export const BigBanner = props => {
     return (
         <Carousel className={classes.root}>
             {
-                items.map((item, i) => <Item key={i} item={item} />)
+                items.map((item, i) => <Item key={i} item={i + 1} />)
             }
         </Carousel>
     )
 }
 
-function Item(props) {
+function Item({ item }) {
     return (
-        <Paper>
-            <h2>{props.item.name}</h2>
-            <p>{props.item.description}</p>
-
+        <Paper elevation={0}>
+            <img
+                src={`${process.env.PUBLIC_URL}/img/banners/big${item}.jpg`}
+                alt='banner'
+            />
+            {/* 
             <Button className="CheckButton">
                 Check it out!
-            </Button>
+            </Button> */}
         </Paper>
     )
 }

@@ -10,18 +10,26 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         height: 270,
         borderRadius: '15px',
-        backgroundColor: 'lightblue'
+        // backgroundColor: 'lightblue'
     },
 }));
 export const Banners = () => {
     const classes = useStyles();
     return (
         <>
-            <Card className={classes.banner}>
-                <Typography variant='h3'>Баннер</Typography>
+            <Card className={classes.banner} elevation={0}>
+                {/* <Typography variant='h3'>Баннер</Typography> */}
+                <img
+                    src={`${process.env.PUBLIC_URL}/img/banners/small1.jpg`}
+                    alt='banner'
+                />
             </Card>
-            <Card className={classes.banner}>
-                <Typography variant='h3'>Баннер</Typography>
+            <Card className={classes.banner} elevation={0}>
+                {/* <Typography variant='h3'>Баннер</Typography> */}
+                <img
+                    src={`${process.env.PUBLIC_URL}/img/banners/small2.jpg`}
+                    alt='banner'
+                />
             </Card>
         </>
     )
