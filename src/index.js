@@ -6,10 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { CssBaseline } from '@material-ui/core';
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <>
     <App />
     <CssBaseline />
-  </React.StrictMode>,
+  </>,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 

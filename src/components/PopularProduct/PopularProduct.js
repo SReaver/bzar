@@ -10,34 +10,24 @@ const useStyles = makeStyles((theme) => ({
         // display: 'flex',
         flexGrow: 1,
         flexShrink: 1,
-        height: 200,
+        // height: 200,
         margin: theme.spacing(1)
         // flexBasis: '200px'
     },
 
 }));
-export const PopularProduct = () => {
+export const PopularProduct = ({ img }) => {
     const classes = useStyles();
+    const logo = `${process.env.PUBLIC_URL}/img/product/${img}.jpg`
     return (
         // <Grid item>
         <Card className={classes.root}>
-            <CardHeader
-                avatar={
-                    <Avatar aria-label="recipe">
-                        {/* M */}
-                    </Avatar>
-                }
-                // action={
-                //     <IconButton aria-label="settings">
-                //         <MoreVert />
-                //     </IconButton>
-                // }
-                title="Название товара"
-            // subheader="Описание товара"
-            />
             <CardContent>
-                <Typography>Популярный товар</Typography>
-            </CardContent>
+                <img
+                    src={img > 5 ? `${process.env.PUBLIC_URL}/img/product/2.jpg` : logo}
+                    alt='product'
+                />
+            </CardContent >
             <CardActions disableSpacing>
                 <IconButton aria-label="add to favorites">
                     <FavoriteIcon />
@@ -47,7 +37,7 @@ export const PopularProduct = () => {
                 </IconButton>
 
             </CardActions>
-        </Card>
+        </Card >
         // </Grid>
     )
 }

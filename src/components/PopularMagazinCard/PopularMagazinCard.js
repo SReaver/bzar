@@ -41,16 +41,18 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column'
     }
 }));
-export const PopularMagazinCard = () => {
+export const PopularMagazinCard = ({ logo, img1, img2, img3, title, slogan }) => {
     const classes = useStyles();
     return (
         <Card className={classes.root}>
             <CardHeader
                 avatar={
-                    <Box className={classes.logo} />
+                    <Box className={classes.logo} >
+                        M{logo}
+                    </Box>
                 }
-                title="Название магазина"
-                subheader="Слоган магазина"
+                title={title}
+                subheader={slogan}
             />
             <CardContent className={classes.content}>
                 {/* <Grid container spacing={1}>
@@ -68,11 +70,26 @@ export const PopularMagazinCard = () => {
                 </Grid> */}
                 <Grid container spacing={1} >
                     <Grid item >
-                        <Box className={classes.logo100} />
+                        <Box className={classes.logo100} >
+                            <img
+                                src={`${process.env.PUBLIC_URL}/img/magazin/${img1}.jpg`}
+                                alt='logo'
+                            />
+                        </Box>
                     </Grid>
                     <Grid item className={classes.vertical} >
-                        <Box className={classes.logoSmall} />
-                        <Box className={classes.logoSmall} />
+                        <Box className={classes.logoSmall} >
+                            <img
+                                src={`${process.env.PUBLIC_URL}/img/magazin/${img2}.jpg`}
+                                alt='logo'
+                            />
+                        </Box>
+                        <Box className={classes.logoSmall} >
+                            <img
+                                src={`${process.env.PUBLIC_URL}/img/magazin/${img3}.jpg`}
+                                alt='logo'
+                            />
+                        </Box>
                     </Grid>
                 </Grid>
             </CardContent>

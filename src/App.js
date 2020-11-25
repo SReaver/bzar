@@ -42,11 +42,11 @@ export const App = () => {
             <Typography variant='h4'>Популярные товары</Typography>
           </Grid>
           <Box className={classes.products} >
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((product, i) => (<PopularProduct key={i} />))}
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((product, i) => (<PopularProduct key={i} img={product} />))}
           </Box>
           <Banners />
           <Box className={classes.products} >
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((product, i) => (<PopularProduct key={i} />))}
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((product, i) => (<PopularProduct key={i} img={product} />))}
           </Box>
         </Grid>
 
